@@ -1,7 +1,5 @@
-import { PrismaClient } from '@prisma/client'
+import prisma from '../src/lib/prisma'
 import { products } from '../src/data/products'
-
-const prisma = new PrismaClient()
 
 async function main() {
   const count = await prisma.product.count()
