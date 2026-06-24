@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { getProducts } from '@/data/products';
+import prisma from '@/lib/prisma';
 
 export default async function ShopPage({
   searchParams,
@@ -12,22 +12,22 @@ export default async function ShopPage({
   const typeFilter = typeof params.type === 'string' ? params.type : undefined;
   const sort = typeof params.sort === 'string' ? params.sort : 'newest';
   
-  let products = await getProducts();
-  
-  if (patternFilter) {
-    products = products.filter(p => p.patternName === patternFilter);
-  }
-  if (typeFilter) {
-    products = products.filter(p => p.type === typeFilter);
-  }
-  
+  let orderBy: any = { createdAt: 'desc' };
   if (sort === 'price_asc') {
-    products.sort((a, b) => a.price - b.price);
+    orderBy = { price: 'asc' };
   } else if (sort === 'price_desc') {
-    products.sort((a, b) => b.price - a.price);
-  } else {
-    products.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+    orderBy = { price: 'desc' };
   }
+
+  const products = await prisma.product.findMany({
+    where: {
+      ...(patternFilter ? { patternName: patternFilter } : {}),
+      ...(typeFilter ? { type: typeFilter } : {}),
+      status: 'Active'
+    },
+    include: { images: true },
+    orderBy
+  });
 
   return (
     <div className="container mx-auto px-4 py-12 flex flex-col md:flex-row gap-8">

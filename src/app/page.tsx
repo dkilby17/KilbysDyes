@@ -1,10 +1,14 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { getProducts } from '@/data/products';
+import prisma from '@/lib/prisma';
 
 export default async function Home() {
-  const allProducts = await getProducts();
-  const featuredProducts = allProducts.slice(0, 3);
+  const allProducts = await prisma.product.findMany({
+    include: { images: true },
+    orderBy: { createdAt: 'desc' },
+    take: 3
+  });
+  const featuredProducts = allProducts;
 
   return (
     <div className="flex flex-col min-h-screen">

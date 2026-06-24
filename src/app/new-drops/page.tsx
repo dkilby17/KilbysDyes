@@ -1,10 +1,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { getProducts } from '@/data/products';
+import prisma from '@/lib/prisma';
 
 export default async function NewDropsPage() {
-  const allProducts = await getProducts();
-  const newDrops = allProducts.filter(p => p.isNewDrop);
+  const newDrops = await prisma.product.findMany({
+    where: { isNewDrop: true, status: 'Active' },
+    include: { images: true, variants: true },
+    orderBy: { createdAt: 'desc' }
+  });
 
   return (
     <div className="min-h-screen bg-gray-900 text-white pb-24">

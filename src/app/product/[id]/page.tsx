@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getProductById } from '@/data/products';
+import prisma from '@/lib/prisma';
 
 export default async function ProductPage({
   params,
@@ -9,7 +9,10 @@ export default async function ProductPage({
   params: Promise<{ id: string }>
 }) {
   const { id } = await params;
-  const product = await getProductById(id);
+  const product = await prisma.product.findUnique({
+    where: { id },
+    include: { images: true, variants: true }
+  });
 
   if (!product) {
     notFound();
