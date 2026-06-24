@@ -1,11 +1,16 @@
+'use client';
+
 import Link from 'next/link';
+import { useState } from 'react';
 
 export function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur-md">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center gap-6">
-          <Link href="/" className="text-2xl font-black tracking-tighter bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-transparent bg-clip-text">
+          <Link href="/" onClick={() => setIsMenuOpen(false)} className="text-2xl font-black tracking-tighter bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-transparent bg-clip-text">
             KilbysDyes
           </Link>
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
@@ -22,11 +27,37 @@ export function Header() {
             </span>
           </Link>
           
-          <button className="md:hidden p-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden p-2 text-gray-700 hover:text-pink-500 transition-colors">
+            {isMenuOpen ? (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            )}
           </button>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="md:hidden border-t border-gray-200 bg-white absolute w-full left-0 shadow-lg pb-4 pt-2">
+          <nav className="flex flex-col container mx-auto px-4 gap-4 text-lg font-bold">
+            <Link 
+              href="/shop" 
+              onClick={() => setIsMenuOpen(false)}
+              className="py-2 hover:text-pink-500 transition-colors border-b border-gray-100"
+            >
+              Shop
+            </Link>
+            <Link 
+              href="/new-drops" 
+              onClick={() => setIsMenuOpen(false)}
+              className="py-2 hover:text-purple-500 transition-colors border-b border-gray-100"
+            >
+              New Drops
+            </Link>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }
