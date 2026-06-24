@@ -47,11 +47,7 @@ export default function CartPage() {
                     
                     <p className="text-gray-500 text-sm mb-2">Size: {item.size}</p>
                     
-                    {item.isCustom && (
-                      <p className="text-xs text-purple-600 bg-purple-50 p-2 rounded-lg mb-2 line-clamp-2">
-                        {item.customDetails}
-                      </p>
-                    )}
+
                     
                     <div className="mt-auto flex justify-between items-end">
                       <div className="flex items-center border border-gray-200 rounded-full px-2">
