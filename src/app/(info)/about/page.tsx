@@ -23,10 +23,7 @@ export default function AboutPage() {
           Because each item is handmade, no two pieces are exactly alike. When you wear KilbysDyes, you're wearing a one-of-a-kind piece of wearable art.
         </p>
         
-        <h2 className="text-2xl font-bold mt-12 mb-4">Custom Creations</h2>
-        <p className="mb-6">
-          We love bringing your vision to life! Our <Link href="/customize" className="text-pink-500 font-bold hover:underline">custom order tool</Link> allows you to choose your favorite colors and patterns, and we'll create a custom piece just for you.
-        </p>
+
         
         <div className="bg-pink-50 rounded-3xl p-8 mt-12 text-center border border-pink-100">
           <h3 className="text-2xl font-black text-pink-600 mb-4">Wear Your Colour.</h3>

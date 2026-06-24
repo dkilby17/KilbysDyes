@@ -130,7 +130,7 @@ export default function CheckoutPage() {
                   <span className="animate-spin h-5 w-5 border-2 border-white border-t-transparent rounded-full"></span>
                   Processing...
                 </>
-              ) : 'Pay $128.50'}
+              ) : 'Pay $43.50'}
             </button>
             <p className="text-xs text-center text-gray-500 mt-4">
               By placing your order, you agree to KilbysDyes's Terms of Service and Privacy Policy.
@@ -155,24 +155,12 @@ export default function CheckoutPage() {
                   <p className="font-bold mt-1">$35.00</p>
                 </div>
               </div>
-              
-              <div className="flex gap-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-pink-100 to-purple-100 rounded-lg shrink-0 flex items-center justify-center relative">
-                  <span className="text-xs font-bold text-pink-500">Custom</span>
-                  <span className="absolute -top-2 -right-2 bg-gray-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold z-10">1</span>
-                </div>
-                <div className="text-sm flex-1">
-                  <p className="font-bold line-clamp-1">Custom Tie-Dye Hoodie</p>
-                  <p className="text-gray-500">L</p>
-                  <p className="font-bold mt-1">$85.00</p>
-                </div>
-              </div>
             </div>
 
             <div className="space-y-2 text-sm pt-4 border-t border-gray-200 mb-4">
               <div className="flex justify-between">
                 <span className="text-gray-600">Subtotal</span>
-                <span className="font-bold">$120.00</span>
+                <span className="font-bold">$35.00</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-600">Shipping</span>
@@ -184,7 +172,7 @@ export default function CheckoutPage() {
               <span className="font-bold text-lg">Total</span>
               <div className="text-right">
                 <span className="text-xs text-gray-500 mr-1">USD</span>
-                <span className="font-black text-2xl text-purple-600">$128.50</span>
+                <span className="font-black text-2xl text-purple-600">$43.50</span>
               </div>
             </div>
           </div>

@@ -11,7 +11,6 @@ export function Header() {
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
             <Link href="/shop" className="hover:text-pink-500 transition-colors">Shop</Link>
             <Link href="/new-drops" className="hover:text-purple-500 transition-colors">New Drops</Link>
-            <Link href="/customize" className="hover:text-indigo-500 transition-colors">Customize</Link>
           </nav>
         </div>
         

@@ -7,14 +7,7 @@ export default function FAQPage() {
     {
       q: "Will my item look exactly like the photo?",
       a: "Because each item is made by hand, there will be slight variations in colour placement and pattern shape. The photos represent the style, colours, and pattern technique used, but your item will be uniquely yours."
-    },
-    {
-      q: "Can I customize colours?",
-      a: "Absolutely! You can use our Custom Order page to select your preferred product type, size, pattern, and up to 4 colours."
-    },
-    {
-      q: "How long do custom orders take?",
-      a: "Custom orders typically take 1-2 weeks to produce before they are shipped, as they are made to order from scratch."
+
     },
     {
       q: "Do items shrink?",
@@ -23,10 +16,7 @@ export default function FAQPage() {
     {
       q: "How do I wash tie-dye clothing?",
       a: "For the first wash, wash the item separately in cold water to prevent any residual dye from bleeding onto other clothes. After that, wash in cold water with mild detergent, inside out, and tumble dry low or hang dry."
-    },
-    {
-      q: "Can I return custom orders?",
-      a: "Because custom orders are made specifically for you based on your requests, they are final sale and cannot be returned unless the item arrives damaged or defective."
+
     },
     {
       q: "How do new drops work?",

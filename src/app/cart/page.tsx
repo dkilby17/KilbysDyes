@@ -11,16 +11,6 @@ export default function CartPage() {
       price: 35.00,
       quantity: 1,
       image: 'https://images.unsplash.com/photo-1574314227361-b75c88939c0d?w=200&q=80',
-    },
-    {
-      id: '2',
-      name: 'Custom Tie-Dye Hoodie',
-      size: 'L',
-      price: 85.00,
-      quantity: 1,
-      image: null,
-      isCustom: true,
-      customDetails: 'Pattern: Crumple, Colors: Red, Orange, Yellow, Pink'
     }
   ];
 

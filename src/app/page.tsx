@@ -22,9 +22,7 @@ export default async function Home() {
             <Link href="/new-drops" className="px-8 py-4 bg-white text-purple-600 font-bold rounded-full hover:bg-pink-50 hover:scale-105 transition-all shadow-xl">
               Shop New Drops
             </Link>
-            <Link href="/customize" className="px-8 py-4 bg-purple-900 bg-opacity-40 backdrop-blur-sm border-2 border-white/50 text-white font-bold rounded-full hover:bg-opacity-60 transition-all shadow-xl">
-              Customize Your Own
-            </Link>
+
             <Link href="/shop" className="px-8 py-4 bg-transparent underline-offset-4 hover:underline text-white font-bold rounded-full transition-all">
               Browse Patterns
             </Link>
@@ -104,18 +102,7 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Customize CTA */}
-      <section className="py-24 bg-gradient-to-r from-pink-500 to-orange-400 text-white relative overflow-hidden">
-        <div className="container mx-auto px-4 relative z-10 text-center">
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-6 drop-shadow-md">Bring Your Vision to Life</h2>
-          <p className="text-xl mb-10 max-w-2xl mx-auto drop-shadow-sm">
-            Use our AI-powered customization tool to design your perfect tie-dye masterpiece. Choose your colours, pattern, and style.
-          </p>
-          <Link href="/customize" className="inline-block px-10 py-5 bg-white text-pink-500 font-black rounded-full hover:bg-gray-100 hover:scale-105 transition-all shadow-xl text-lg">
-            Start Designing
-          </Link>
-        </div>
-      </section>
+
 
       {/* About */}
       <section className="py-24 bg-white">
