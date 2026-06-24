@@ -97,8 +97,26 @@ export default async function AdminProductsPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-bold text-gray-700 mb-1">Image URL</label>
-                <input type="url" name="imageUrl" required className="w-full p-2 border border-gray-200 rounded-lg" />
+                <label className="block text-sm font-bold text-gray-700 mb-2">Available Sizes</label>
+                <div className="flex gap-4">
+                  {['S', 'M', 'L', 'XL', 'XXL'].map(size => (
+                    <label key={size} className="flex items-center gap-2">
+                      <input type="checkbox" name="sizes" value={size} defaultChecked={['S', 'M', 'L'].includes(size)} className="w-4 h-4" />
+                      <span className="text-sm font-bold">{size}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-bold text-gray-700 mb-1">Front Image</label>
+                  <input type="file" name="imageFront" accept="image/*" required className="w-full p-2 border border-gray-200 rounded-lg bg-gray-50 text-sm" />
+                </div>
+                <div>
+                  <label className="block text-sm font-bold text-gray-700 mb-1">Back/Alt Image</label>
+                  <input type="file" name="imageBack" accept="image/*" required className="w-full p-2 border border-gray-200 rounded-lg bg-gray-50 text-sm" />
+                </div>
               </div>
 
               <div className="flex items-center gap-2 mt-4">
