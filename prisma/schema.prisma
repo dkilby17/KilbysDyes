@@ -39,3 +39,33 @@ model ProductVariant {
   productId String
   product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
 }
+
+model Order {
+  id              String      @id @default(cuid())
+  orderNumber     String      @unique
+  email           String
+  firstName       String
+  lastName        String
+  address         String
+  apartment       String?
+  city            String
+  state           String
+  zip             String
+  status          String      @default("Pending")
+  subtotal        Float
+  shippingCost    Float       @default(8.50)
+  total           Float
+  createdAt       DateTime    @default(now())
+  items           OrderItem[]
+}
+
+model OrderItem {
+  id        String  @id @default(cuid())
+  productId String
+  name      String
+  size      String
+  quantity  Int
+  price     Float
+  orderId   String
+  order     Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+}

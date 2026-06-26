@@ -23,7 +23,7 @@ export default function AdminLayout({
             Products
           </Link>
           <Link href="/admin/orders" className="block px-4 py-2 rounded-xl text-gray-300 hover:bg-gray-800 hover:text-white transition-colors">
-            Orders (Coming Soon)
+            Orders
           </Link>
         </nav>
       </aside>

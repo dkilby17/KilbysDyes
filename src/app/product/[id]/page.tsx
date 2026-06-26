@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import prisma from '@/lib/prisma';
+import { AddToCartForm } from '@/components/ui/AddToCartForm';
 
 export default async function ProductPage({
   params,
@@ -66,38 +67,13 @@ export default async function ProductPage({
             {product.description}
           </p>
 
-          <div className="bg-gray-50 rounded-2xl p-6 mb-8 border border-gray-100">
-            <h3 className="font-bold text-gray-900 mb-4">Select Size</h3>
-            <div className="flex flex-wrap gap-3 mb-2">
-              {product.variants.map(variant => (
-                <button 
-                  key={variant.id}
-                  disabled={variant.quantity === 0}
-                  className={`
-                    w-14 h-14 rounded-full font-bold flex items-center justify-center border-2 transition-all
-                    ${variant.quantity > 0 
-                      ? 'border-gray-200 hover:border-purple-500 hover:text-purple-600 bg-white' 
-                      : 'border-gray-100 text-gray-300 bg-gray-50 cursor-not-allowed'}
-                  `}
-                >
-                  {variant.size}
-                </button>
-              ))}
-            </div>
-            <Link href="/faq" className="text-sm text-purple-600 hover:underline">Size Guide</Link>
-          </div>
-
-          <div className="flex gap-4 mb-8">
-            <div className="flex items-center border-2 border-gray-200 rounded-full bg-white px-2">
-              <button className="w-10 h-10 flex items-center justify-center font-bold text-xl hover:text-pink-500">&minus;</button>
-              <span className="w-10 text-center font-bold">1</span>
-              <button className="w-10 h-10 flex items-center justify-center font-bold text-xl hover:text-pink-500">+</button>
-            </div>
-            
-            <button className="flex-1 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-black text-lg rounded-full shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all py-4">
-              Add to Cart
-            </button>
-          </div>
+          <AddToCartForm 
+            productId={product.id}
+            name={product.name}
+            price={product.price}
+            imageUrl={product.images[0]?.url || ''}
+            variants={product.variants}
+          />
 
           {/* Details Accordion (Simulated with simple lists for now) */}
           <div className="space-y-6 border-t border-gray-200 pt-8 mt-4">
