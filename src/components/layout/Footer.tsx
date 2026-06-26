@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export function Footer() {
   return (
@@ -6,8 +7,8 @@ export function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div className="col-span-1 md:col-span-2">
-            <Link href="/" className="text-2xl font-black tracking-tighter bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-transparent bg-clip-text mb-4 inline-block">
-              KilbysDyes
+            <Link href="/" className="relative w-40 h-16 inline-block mb-4">
+              <Image src="/logo.png" alt="KilbysDyes Logo" fill className="object-contain" />
             </Link>
             <p className="text-gray-600 max-w-sm">
               Handmade tie-dye clothing. Fun, colourful, one-of-a-kind pieces. Wear your colour with KilbysDyes.
@@ -17,17 +18,17 @@ export function Footer() {
           <div>
             <h3 className="font-bold mb-4">Shop</h3>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li><Link href="/shop" className="hover:text-pink-500">Shop All</Link></li>
-              <li><Link href="/new-drops" className="hover:text-pink-500">New Drops</Link></li>
+              <li><Link href="/shop" className="hover:text-sky-500 transition-colors">Shop All</Link></li>
+              <li><Link href="/new-drops" className="hover:text-sky-500 transition-colors">New Drops</Link></li>
             </ul>
           </div>
           
           <div>
             <h3 className="font-bold mb-4">Customer Care</h3>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li><Link href="/faq" className="hover:text-pink-500">FAQ</Link></li>
-              <li><Link href="/care" className="hover:text-pink-500">Care Instructions</Link></li>
-              <li><Link href="/contact" className="hover:text-pink-500">Contact Us</Link></li>
+              <li><Link href="/faq" className="hover:text-fuchsia-500 transition-colors">FAQ</Link></li>
+              <li><Link href="/care" className="hover:text-fuchsia-500 transition-colors">Care Instructions</Link></li>
+              <li><Link href="/contact" className="hover:text-fuchsia-500 transition-colors">Contact Us</Link></li>
             </ul>
           </div>
         </div>

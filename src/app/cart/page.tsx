@@ -41,7 +41,7 @@ export default function CartPage() {
                   <div className="flex-1 flex flex-col justify-between py-1">
                     <div className="flex justify-between items-start gap-4">
                       <div>
-                        <Link href={`/product/${item.productId}`} className="font-bold text-lg md:text-xl hover:text-pink-500 transition-colors">
+                        <Link href={`/product/${item.productId}`} className="font-bold text-lg md:text-xl hover:text-sky-500 transition-colors">
                           {item.name}
                         </Link>
                         <p className="text-gray-500 mt-1">Size: <span className="font-bold text-gray-900">{item.size}</span></p>
@@ -56,12 +56,12 @@ export default function CartPage() {
                             if (item.quantity === 1) removeItem(item.productId, item.size);
                             else updateQuantity(item.productId, item.size, item.quantity - 1);
                           }}
-                          className="w-8 h-8 flex items-center justify-center font-bold text-xl hover:text-pink-500"
+                          className="w-8 h-8 flex items-center justify-center font-bold text-xl hover:text-sky-500"
                         >&minus;</button>
                         <span className="w-8 text-center font-bold text-sm">{item.quantity}</span>
                         <button 
                           onClick={() => updateQuantity(item.productId, item.size, item.quantity + 1)}
-                          className="w-8 h-8 flex items-center justify-center font-bold text-xl hover:text-pink-500"
+                          className="w-8 h-8 flex items-center justify-center font-bold text-xl hover:text-sky-500"
                         >+</button>
                       </div>
                       
@@ -83,7 +83,7 @@ export default function CartPage() {
               </div>
               <h2 className="text-2xl font-black mb-2">Your cart is empty</h2>
               <p className="text-gray-500 mb-8">Looks like you haven't added anything to your cart yet.</p>
-              <Link href="/shop" className="inline-block px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-black rounded-full hover:shadow-lg transition-all hover:scale-105">
+              <Link href="/shop" className="inline-block px-8 py-4 bg-gradient-to-r from-sky-400 via-blue-500 to-fuchsia-500 text-white font-black rounded-full hover:shadow-lg transition-all hover:scale-105">
                 Start Shopping
               </Link>
             </div>
@@ -108,7 +108,7 @@ export default function CartPage() {
               
               <div className="flex justify-between items-end mb-8">
                 <span className="font-bold text-lg">Estimated Total</span>
-                <span className="font-black text-3xl text-purple-600">${subtotal.toFixed(2)}</span>
+                <span className="font-black text-3xl text-fuchsia-500">${subtotal.toFixed(2)}</span>
               </div>
 
               <Link href="/checkout" className="w-full flex items-center justify-center py-4 bg-black text-white font-black text-lg rounded-full hover:bg-gray-800 transition-colors shadow-lg hover:shadow-xl hover:scale-[1.02] transform">

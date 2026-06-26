@@ -39,31 +39,29 @@ export default async function ShopPage({
           <h3 className="font-medium text-gray-900 mb-3">Product Type</h3>
           <ul className="space-y-2 text-sm text-gray-600">
             <li>
-              <Link href="/shop" className={`hover:text-pink-500 ${!typeFilter ? 'font-bold text-pink-500' : ''}`}>
+              <Link href="/shop" className={`hover:text-sky-500 ${!typeFilter ? 'font-bold text-sky-500' : ''}`}>
                 All
               </Link>
             </li>
             <li>
-              <Link href="/shop?type=T-Shirt" className={`hover:text-pink-500 ${typeFilter === 'T-Shirt' ? 'font-bold text-pink-500' : ''}`}>
+              <Link href="/shop?type=T-Shirt" className={`hover:text-sky-500 ${typeFilter === 'T-Shirt' ? 'font-bold text-sky-500' : ''}`}>
                 T-Shirts
               </Link>
             </li>
             <li>
-              <Link href="/shop?type=Hoodie" className={`hover:text-pink-500 ${typeFilter === 'Hoodie' ? 'font-bold text-pink-500' : ''}`}>
+              <Link href="/shop?type=Hoodie" className={`hover:text-sky-500 ${typeFilter === 'Hoodie' ? 'font-bold text-sky-500' : ''}`}>
                 Hoodies
               </Link>
             </li>
           </ul>
-        </div>
-        
-        <div className="mb-6">
-          <h3 className="font-medium text-gray-900 mb-3">Pattern</h3>
-          <ul className="space-y-2 text-sm text-gray-600">
-            {['Spiral', 'Crumple', 'Bullseye', 'Ice Dye'].map(p => (
+
+          <h3 className="font-bold text-lg mb-4 mt-8">Patterns</h3>
+          <ul className="space-y-3 text-gray-600">
+            {['Spiral', 'Crumple', 'Bullseye', 'Ice Dye', 'Stripes'].map(p => (
               <li key={p}>
                 <Link 
-                  href={`/shop?pattern=${p}${typeFilter ? `&type=${typeFilter}` : ''}`} 
-                  className={`hover:text-pink-500 ${patternFilter === p ? 'font-bold text-pink-500' : ''}`}
+                  href={`/shop?pattern=${p}`} 
+                  className={`hover:text-sky-500 ${patternFilter === p ? 'font-bold text-sky-500' : ''}`}
                 >
                   {p}
                 </Link>
@@ -75,9 +73,9 @@ export default async function ShopPage({
         <div className="mb-6">
           <h3 className="font-medium text-gray-900 mb-3">Sort By</h3>
           <div className="flex flex-col gap-2 text-sm">
-            <Link href="?sort=newest" className={`hover:text-pink-500 ${sort === 'newest' ? 'font-bold text-pink-500' : ''}`}>Newest</Link>
-            <Link href="?sort=price_asc" className={`hover:text-pink-500 ${sort === 'price_asc' ? 'font-bold text-pink-500' : ''}`}>Price: Low to High</Link>
-            <Link href="?sort=price_desc" className={`hover:text-pink-500 ${sort === 'price_desc' ? 'font-bold text-pink-500' : ''}`}>Price: High to Low</Link>
+            <Link href="?sort=newest" className={`hover:text-sky-500 ${sort === 'newest' ? 'font-bold text-sky-500' : ''}`}>Newest</Link>
+            <Link href="?sort=price_asc" className={`hover:text-sky-500 ${sort === 'price_asc' ? 'font-bold text-sky-500' : ''}`}>Price: Low to High</Link>
+            <Link href="?sort=price_desc" className={`hover:text-sky-500 ${sort === 'price_desc' ? 'font-bold text-sky-500' : ''}`}>Price: High to Low</Link>
           </div>
         </div>
       </aside>
@@ -92,7 +90,7 @@ export default async function ShopPage({
         {products.length === 0 ? (
           <div className="py-20 text-center text-gray-500 bg-gray-50 rounded-2xl">
             <p className="text-lg">No products found matching your filters.</p>
-            <Link href="/shop" className="text-pink-500 font-bold hover:underline mt-4 inline-block">Clear Filters</Link>
+            <Link href="/shop" className="text-sky-500 font-bold hover:underline mt-4 inline-block">Clear Filters</Link>
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -118,7 +116,7 @@ export default async function ShopPage({
                 <div className="p-6">
                   <h3 className="font-bold text-xl mb-2 text-gray-900">{product.name}</h3>
                   <div className="flex justify-between items-center mt-4">
-                    <span className="font-black text-2xl text-purple-600">${product.price.toFixed(2)}</span>
+                    <span className="font-black text-2xl text-blue-600">${product.price.toFixed(2)}</span>
                     <span className="text-sm font-medium text-gray-500 bg-white px-3 py-1 rounded-full shadow-sm border border-gray-100">
                       {product.type}
                     </span>

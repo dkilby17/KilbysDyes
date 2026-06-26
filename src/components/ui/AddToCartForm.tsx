@@ -58,9 +58,9 @@ export function AddToCartForm({ productId, name, price, imageUrl, variants }: Ad
               disabled={variant.quantity === 0}
               className={`
                 w-14 h-14 rounded-full font-bold flex items-center justify-center border-2 transition-all
-                ${selectedSize === variant.size ? 'border-pink-500 bg-pink-50 text-pink-600' : ''}
+                ${selectedSize === variant.size ? 'border-sky-500 bg-sky-50 text-sky-600' : ''}
                 ${variant.quantity > 0 && selectedSize !== variant.size
-                  ? 'border-gray-200 hover:border-purple-500 hover:text-purple-600 bg-white' 
+                  ? 'border-gray-200 hover:border-blue-500 hover:text-blue-600 bg-white' 
                   : ''}
                 ${variant.quantity === 0 ? 'border-gray-100 text-gray-300 bg-gray-50 cursor-not-allowed' : ''}
               `}
@@ -76,19 +76,19 @@ export function AddToCartForm({ productId, name, price, imageUrl, variants }: Ad
         <div className="flex items-center border-2 border-gray-200 rounded-full bg-white px-2">
           <button 
             onClick={() => setQuantity(Math.max(1, quantity - 1))}
-            className="w-10 h-10 flex items-center justify-center font-bold text-xl hover:text-pink-500"
+            className="w-10 h-10 flex items-center justify-center font-bold text-xl hover:text-sky-500"
           >&minus;</button>
           <span className="w-10 text-center font-bold">{quantity}</span>
           <button 
             onClick={() => setQuantity(quantity + 1)}
-            className="w-10 h-10 flex items-center justify-center font-bold text-xl hover:text-pink-500"
+            className="w-10 h-10 flex items-center justify-center font-bold text-xl hover:text-sky-500"
           >+</button>
         </div>
         
         <button 
           onClick={handleAddToCart}
           disabled={isOutOfStock}
-          className="flex-1 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-black text-lg rounded-full shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all py-4 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="flex-1 bg-gradient-to-r from-sky-400 via-blue-500 to-fuchsia-500 text-white font-black text-lg rounded-full shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all py-4 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isOutOfStock ? 'Not Enough Stock' : 'Add to Cart'}
         </button>

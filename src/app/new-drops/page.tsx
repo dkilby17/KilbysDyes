@@ -13,10 +13,10 @@ export default async function NewDropsPage() {
     <div className="min-h-screen bg-gray-900 text-white pb-24">
       {/* Hero Banner */}
       <div className="relative pt-24 pb-32 overflow-hidden flex flex-col items-center justify-center text-center">
-        <div className="absolute inset-0 bg-gradient-to-br from-pink-600 via-purple-700 to-indigo-900 opacity-90 z-0"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-600 via-blue-700 to-sky-900 opacity-90 z-0"></div>
         
         {/* Animated background elements */}
-        <div className="absolute top-0 left-1/4 w-64 h-64 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob z-0"></div>
+        <div className="absolute top-0 left-1/4 w-64 h-64 bg-fuchsia-500 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob z-0"></div>
         <div className="absolute top-0 right-1/4 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000 z-0"></div>
         <div className="absolute -bottom-32 left-1/2 w-64 h-64 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-4000 z-0"></div>
 
@@ -24,7 +24,7 @@ export default async function NewDropsPage() {
           <span className="inline-block py-1 px-3 rounded-full bg-black/30 border border-white/20 text-sm font-bold tracking-widest uppercase mb-6 backdrop-blur-sm">
             Limited Edition Release
           </span>
-          <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-pink-100 to-purple-200">
+          <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-100 to-fuchsia-200">
             The Midnight Collection
           </h1>
           <p className="text-xl md:text-2xl text-purple-100 max-w-2xl mx-auto mb-10 font-medium">
@@ -46,7 +46,7 @@ export default async function NewDropsPage() {
               <div className="text-xs uppercase tracking-widest text-gray-400 mt-1">Mins</div>
             </div>
             <div className="bg-black/40 backdrop-blur-md rounded-2xl p-4 border border-white/10 min-w-[80px]">
-              <div className="text-3xl font-black font-mono text-pink-400">09</div>
+              <div className="text-3xl font-black font-mono text-sky-400">09</div>
               <div className="text-xs uppercase tracking-widest text-gray-400 mt-1">Secs</div>
             </div>
           </div>
@@ -82,7 +82,7 @@ export default async function NewDropsPage() {
                     </div>
                   ) : (
                     <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full border border-gray-600 flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></span>
+                      <span className="w-2 h-2 rounded-full bg-sky-500 animate-pulse"></span>
                       Only {totalInventory} left
                     </div>
                   )}
@@ -94,7 +94,7 @@ export default async function NewDropsPage() {
                   
                   <div className="mt-auto">
                     <div className="flex justify-between items-center mb-6">
-                      <span className="font-black text-3xl text-pink-400">${product.price.toFixed(2)}</span>
+                      <span className="font-black text-3xl text-sky-400">${product.price.toFixed(2)}</span>
                       <span className="text-sm font-bold text-gray-300 bg-gray-700 px-4 py-2 rounded-full">
                         {product.type}
                       </span>
@@ -105,7 +105,7 @@ export default async function NewDropsPage() {
                         Out of Stock
                       </button>
                     ) : (
-                      <Link href={`/product/${product.id}`} className="block w-full text-center py-4 rounded-full bg-white text-black font-black hover:bg-pink-500 hover:text-white transition-colors">
+                      <Link href={`/product/${product.id}`} className="block w-full text-center py-4 rounded-full bg-white text-black font-black hover:bg-sky-500 hover:text-white transition-colors">
                         View Product
                       </Link>
                     )}
@@ -120,7 +120,7 @@ export default async function NewDropsPage() {
       {/* Email Signup */}
       <div className="container mx-auto px-4 mt-32 max-w-4xl">
         <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-10 md:p-16 border border-gray-700 text-center relative overflow-hidden shadow-2xl">
-          <div className="absolute -top-24 -right-24 w-48 h-48 bg-pink-600 rounded-full mix-blend-screen filter blur-3xl opacity-30"></div>
+          <div className="absolute -top-24 -right-24 w-48 h-48 bg-fuchsia-600 rounded-full mix-blend-screen filter blur-3xl opacity-30"></div>
           
           <h2 className="text-3xl md:text-4xl font-black mb-4 relative z-10">Don't miss the next drop.</h2>
           <p className="text-gray-400 mb-8 max-w-lg mx-auto relative z-10">
@@ -131,10 +131,10 @@ export default async function NewDropsPage() {
             <input 
               type="email" 
               placeholder="Enter your email address" 
-              className="flex-1 px-6 py-4 rounded-full bg-gray-950 border border-gray-700 text-white focus:outline-none focus:border-pink-500 focus:ring-1 focus:ring-pink-500"
+              className="flex-1 px-6 py-4 rounded-full bg-gray-950 border border-gray-700 text-white focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
               required
             />
-            <button type="button" className="px-8 py-4 rounded-full bg-pink-600 text-white font-bold hover:bg-pink-500 transition-colors whitespace-nowrap">
+            <button type="button" className="px-8 py-4 rounded-full bg-fuchsia-600 text-white font-bold hover:bg-fuchsia-500 transition-colors whitespace-nowrap">
               Get Early Access
             </button>
           </form>

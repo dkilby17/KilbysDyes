@@ -13,7 +13,7 @@ export default async function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-pink-400 via-purple-500 to-indigo-600 text-white">
+      <section className="relative overflow-hidden bg-gradient-to-br from-sky-400 via-blue-500 to-fuchsia-600 text-white">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1528458909336-e7a0adfed0a5?w=1600&q=80')] opacity-20 bg-cover bg-center mix-blend-overlay"></div>
         <div className="container mx-auto px-4 py-24 md:py-32 relative z-10 flex flex-col items-center text-center">
           <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6 drop-shadow-lg">
@@ -23,7 +23,7 @@ export default async function Home() {
             Handmade, one-of-a-kind tie-dye clothing designed to make you stand out.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="/new-drops" className="px-8 py-4 bg-white text-purple-600 font-bold rounded-full hover:bg-pink-50 hover:scale-105 transition-all shadow-xl">
+            <Link href="/shop" className="px-8 py-4 bg-gradient-to-r from-sky-400 via-blue-500 to-fuchsia-500 text-white font-black text-lg rounded-full shadow-lg shadow-sky-500/30 hover:shadow-xl hover:shadow-sky-500/40 transition-all hover:scale-105">
               Shop New Drops
             </Link>
 
@@ -42,7 +42,7 @@ export default async function Home() {
               <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-2">Featured Products</h2>
               <p className="text-gray-600">Fresh from the dye bath.</p>
             </div>
-            <Link href="/shop" className="hidden md:inline-flex text-purple-600 font-bold hover:text-pink-500 transition-colors">
+            <Link href="/shop" className="hidden md:inline-flex text-blue-600 font-bold hover:text-fuchsia-500 transition-colors">
               View All &rarr;
             </Link>
           </div>
@@ -62,7 +62,7 @@ export default async function Home() {
                     <div className="w-full h-full flex items-center justify-center text-gray-400">No Image</div>
                   )}
                   {product.isNewDrop && (
-                    <div className="absolute top-4 left-4 bg-pink-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide shadow-md">
+                    <div className="absolute top-4 left-4 bg-fuchsia-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide shadow-md">
                       New Drop
                     </div>
                   )}
@@ -70,7 +70,7 @@ export default async function Home() {
                 <div className="p-6">
                   <h3 className="font-bold text-xl mb-2 text-gray-900">{product.name}</h3>
                   <div className="flex justify-between items-center mt-4">
-                    <span className="font-black text-2xl text-purple-600">${product.price.toFixed(2)}</span>
+                    <span className="font-black text-2xl text-blue-600">${product.price.toFixed(2)}</span>
                     <span className="text-sm font-medium text-gray-500 bg-white px-3 py-1 rounded-full shadow-sm">
                       {product.type}
                     </span>
@@ -81,7 +81,7 @@ export default async function Home() {
           </div>
           
           <div className="mt-8 text-center md:hidden">
-            <Link href="/shop" className="inline-flex text-purple-600 font-bold hover:text-pink-500 transition-colors">
+            <Link href="/shop" className="inline-flex text-blue-600 font-bold hover:text-fuchsia-500 transition-colors">
               View All Products &rarr;
             </Link>
           </div>
@@ -97,7 +97,7 @@ export default async function Home() {
               <Link 
                 key={pattern} 
                 href={`/shop?pattern=${pattern}`}
-                className="px-6 py-3 bg-white rounded-full font-bold shadow-sm border border-gray-100 hover:border-pink-300 hover:shadow-md hover:text-pink-500 transition-all"
+                className="px-6 py-3 bg-white rounded-full font-bold shadow-sm border border-gray-100 hover:border-sky-300 hover:shadow-md hover:text-sky-500 transition-all"
               >
                 {pattern}
               </Link>

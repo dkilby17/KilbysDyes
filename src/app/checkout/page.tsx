@@ -88,7 +88,7 @@ export default function CheckoutPage() {
         <p className="text-lg text-gray-600 mb-8 leading-relaxed">
           Thank you for choosing KilbysDyes! Your order has been placed in our system. Since we are using manual payments for now, we will contact you at your email address to arrange payment and shipping!
         </p>
-        <div className="bg-gradient-to-r from-pink-50 to-purple-50 border border-pink-100 p-6 rounded-2xl mb-8 font-medium w-full max-w-sm mx-auto shadow-sm">
+        <div className="bg-gradient-to-r from-sky-50 to-blue-50 border border-sky-100 p-6 rounded-2xl mb-8 font-medium w-full max-w-sm mx-auto shadow-sm">
           <span className="block text-sm text-gray-500 uppercase tracking-widest mb-1">Order Number</span>
           <span className="text-2xl font-black text-gray-900">{orderNumber}</span>
         </div>
@@ -117,10 +117,10 @@ export default function CheckoutPage() {
               <div className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                  <input type="email" name="email" required className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-500" placeholder="you@example.com" />
+                  <input type="email" name="email" required className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-sky-500" placeholder="you@example.com" />
                 </div>
                 <div className="flex items-center">
-                  <input type="checkbox" id="marketing" className="w-4 h-4 text-pink-600 border-gray-300 rounded focus:ring-pink-500" />
+                  <input type="checkbox" id="marketing" className="w-4 h-4 text-sky-600 border-gray-300 rounded focus:ring-sky-500" />
                   <label htmlFor="marketing" className="ml-2 block text-sm text-gray-700">
                     Keep me updated on new drops and exclusive offers via email.
                   </label>
@@ -173,7 +173,7 @@ export default function CheckoutPage() {
             <button 
               type="submit" 
               disabled={isProcessing}
-              className="w-full py-5 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-black text-xl rounded-full hover:shadow-lg disabled:opacity-50 transition-all flex items-center justify-center gap-3 hover:scale-[1.01] transform shadow-md"
+              className="w-full py-5 bg-gradient-to-r from-sky-400 via-blue-500 to-fuchsia-500 text-white font-black text-xl rounded-full hover:shadow-lg disabled:opacity-50 transition-all flex items-center justify-center gap-3 hover:scale-[1.01] transform shadow-md"
             >
               {isProcessing ? (
                 <>
@@ -224,7 +224,7 @@ export default function CheckoutPage() {
               <span className="font-black text-xl">Total</span>
               <div className="text-right">
                 <span className="text-xs text-gray-500 mr-1">USD</span>
-                <span className="font-black text-3xl text-purple-600">${total.toFixed(2)}</span>
+                <span className="font-black text-3xl text-blue-600">${total.toFixed(2)}</span>
               </div>
             </div>
           </div>
