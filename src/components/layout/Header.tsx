@@ -16,9 +16,9 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur-md">
-      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+      <div className="container mx-auto px-4 h-24 flex items-center justify-between">
         <div className="flex items-center gap-6">
-          <Link href="/" onClick={() => setIsMenuOpen(false)} className="shrink-0 relative w-32 h-12">
+          <Link href="/" onClick={() => setIsMenuOpen(false)} className="shrink-0 relative w-56 h-20">
             <Image src="/logo.png" alt="KilbysDyes Logo" fill className="object-contain" priority />
           </Link>
           <nav className="hidden md:flex items-center gap-6 text-sm font-bold">
