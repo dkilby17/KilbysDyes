@@ -86,7 +86,7 @@ export default function CheckoutPage() {
         </div>
         <h1 className="text-4xl font-black mb-4">Order Received!</h1>
         <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-          Thank you for choosing KilbysDyes! Your order has been placed in our system. Since we are using manual payments for now, we will contact you at your email address to arrange payment and shipping!
+          Thank you for choosing Kilby's Dyes! Your order has been placed in our system. Since we are using manual payments for now, we will contact you at your email address to arrange payment and shipping!
         </p>
         <div className="bg-gradient-to-r from-sky-50 to-blue-50 border border-sky-100 p-6 rounded-2xl mb-8 font-medium w-full max-w-sm mx-auto shadow-sm">
           <span className="block text-sm text-gray-500 uppercase tracking-widest mb-1">Order Number</span>
@@ -183,7 +183,7 @@ export default function CheckoutPage() {
               ) : `Complete Order • $${total.toFixed(2)}`}
             </button>
             <p className="text-xs text-center text-gray-500 mt-4">
-              By placing your order, you agree to KilbysDyes's Terms of Service and Privacy Policy.
+              By placing your order, you agree to Kilby's Dyes's Terms of Service and Privacy Policy.
             </p>
           </form>
         </div>

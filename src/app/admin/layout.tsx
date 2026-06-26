@@ -10,8 +10,8 @@ export default function AdminLayout({
     <div className="min-h-screen bg-gray-50 flex flex-col md:flex-row">
       <aside className="w-full md:w-64 bg-gray-900 text-white p-6 shrink-0">
         <div className="mb-10">
-          <Link href="/" className="relative block w-full h-16 mb-2 hover:opacity-80 transition-opacity">
-            <Image src="/logo.png" alt="KilbysDyes Logo" fill className="object-contain object-left" />
+          <Link href="/" className="relative block w-full h-32 mb-2 hover:opacity-80 transition-opacity">
+            <Image src="/logo.png" alt="Kilby's Dyes Logo" fill className="object-contain object-left" />
           </Link>
           <div className="text-xs text-gray-400 font-bold uppercase tracking-widest mt-1">Admin Panel</div>
         </div>

@@ -2,7 +2,7 @@ export default function FAQPage() {
   const faqs = [
     {
       q: "Are all items handmade?",
-      a: "Yes! Every single item at KilbysDyes is hand-tied and hand-dyed. No two pieces are exactly alike, which means you are getting a truly unique piece of clothing."
+      a: "Yes! Every single item at Kilby's Dyes is hand-tied and hand-dyed. No two pieces are exactly alike, which means you are getting a truly unique piece of clothing."
     },
     {
       q: "Will my item look exactly like the photo?",

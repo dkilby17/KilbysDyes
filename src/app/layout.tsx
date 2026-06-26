@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "KilbysDyes | Handmade Tie-Dye",
+  title: "Kilby's Dyes | Handmade Tie-Dye",
   description: "Handmade, one-of-a-kind tie-dye clothing designed to make you stand out.",
 };
 

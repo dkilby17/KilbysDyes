@@ -17,7 +17,7 @@ export default async function Home() {
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1528458909336-e7a0adfed0a5?w=1600&q=80')] opacity-20 bg-cover bg-center mix-blend-overlay"></div>
         <div className="container mx-auto px-4 py-24 md:py-32 relative z-10 flex flex-col items-center text-center">
           <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6 drop-shadow-lg">
-            Wear Your Colour.<br/>Made by KilbysDyes.
+            Wear Your Colour.<br/>Made by Kilby's Dyes.
           </h1>
           <p className="text-xl md:text-2xl mb-10 max-w-2xl font-medium drop-shadow-md">
             Handmade, one-of-a-kind tie-dye clothing designed to make you stand out.
@@ -113,7 +113,7 @@ export default async function Home() {
         <div className="container mx-auto px-4 text-center max-w-3xl">
           <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-6">Handmade with Love.</h2>
           <p className="text-lg text-gray-600 leading-relaxed mb-6">
-            Every piece at KilbysDyes is uniquely crafted by hand. No two items are exactly alike, meaning the shirt or hoodie you receive is a one-of-a-kind piece of wearable art.
+            Every piece at Kilby's Dyes is uniquely crafted by hand. No two items are exactly alike, meaning the shirt or hoodie you receive is a one-of-a-kind piece of wearable art.
           </p>
           <p className="text-lg text-gray-600 leading-relaxed">
             We use high-quality dyes and premium cotton garments to ensure your colours stay bright wash after wash.

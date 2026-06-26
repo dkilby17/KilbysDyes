@@ -124,7 +124,7 @@ export default async function NewDropsPage() {
           
           <h2 className="text-3xl md:text-4xl font-black mb-4 relative z-10">Don't miss the next drop.</h2>
           <p className="text-gray-400 mb-8 max-w-lg mx-auto relative z-10">
-            Join the KilbysDyes VIP list to get early access to limited edition drops before they sell out. We promise not to spam.
+            Join the Kilby's Dyes VIP list to get early access to limited edition drops before they sell out. We promise not to spam.
           </p>
           
           <form className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto relative z-10">
