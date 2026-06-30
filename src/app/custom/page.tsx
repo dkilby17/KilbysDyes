@@ -109,11 +109,20 @@ export default function CustomPage() {
         <div className="w-full lg:w-5/12 shrink-0 flex flex-col gap-4">
           <div className="relative aspect-square w-full rounded-3xl overflow-hidden bg-gray-50 border border-gray-100 flex items-center justify-center p-4">
             
+            {/* SVG Filter for Organic Tie-Dye Effect */}
+            <svg width="0" height="0" className="absolute">
+              <filter id="tie-dye-filter">
+                <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" result="warp" />
+                <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="40" in="SourceGraphic" in2="warp" />
+              </filter>
+            </svg>
+
             {/* The Gradient Background Layer (Masked exactly to the shirt shape) */}
             <div 
               className="absolute inset-4 transition-all duration-700"
               style={{
                 ...getPreviewStyle(),
+                filter: 'url(#tie-dye-filter)',
                 WebkitMaskImage: `url(/blank_${garment.id}.png)`,
                 WebkitMaskSize: 'contain',
                 WebkitMaskRepeat: 'no-repeat',
