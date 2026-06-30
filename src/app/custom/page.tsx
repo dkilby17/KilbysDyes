@@ -107,17 +107,32 @@ export default function CustomPage() {
       <div className="flex flex-col lg:flex-row gap-12">
         {/* Preview Area */}
         <div className="w-full lg:w-5/12 shrink-0 flex flex-col gap-4">
-          <div className="relative aspect-[4/5] w-full rounded-3xl overflow-hidden bg-gray-100 shadow-inner flex items-center justify-center p-8">
-            {/* Simulated Garment Shape with CSS Blend Modes */}
+          <div className="relative aspect-square w-full rounded-3xl overflow-hidden bg-gray-50 border border-gray-100 flex items-center justify-center p-4">
+            
+            {/* The Gradient Background Layer (Masked exactly to the shirt shape) */}
             <div 
-              className="absolute inset-0 opacity-80 mix-blend-multiply filter blur-sm transition-all duration-700"
-              style={getPreviewStyle()}
+              className="absolute inset-4 transition-all duration-700"
+              style={{
+                ...getPreviewStyle(),
+                WebkitMaskImage: `url(/blank_${garment.id}.png)`,
+                WebkitMaskSize: 'contain',
+                WebkitMaskRepeat: 'no-repeat',
+                WebkitMaskPosition: 'center',
+                maskImage: `url(/blank_${garment.id}.png)`,
+                maskSize: 'contain',
+                maskRepeat: 'no-repeat',
+                maskPosition: 'center'
+              }}
             />
-            {/* Silhouette outline to simulate clothing */}
-            <svg viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="0.5" className="relative z-10 w-full h-full opacity-20">
-               <path d="M4.5 7L2 10L5 12V22H19V12L22 10L19.5 7L16 5H8L4.5 7Z" fill="white" />
-            </svg>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent z-20 pointer-events-none"></div>
+            
+            {/* The Realistic Mockup Layer (Multiply Blending for Texture/Shadows) */}
+            <div className="absolute inset-4 z-10 pointer-events-none mix-blend-multiply opacity-90">
+              <img 
+                src={`/blank_${garment.id}.png`} 
+                alt={`${garment.name} Mockup`}
+                className="w-full h-full object-contain drop-shadow-2xl"
+              />
+            </div>
             
             <div className="absolute bottom-4 left-0 w-full text-center z-30">
               <span className="bg-white/90 backdrop-blur text-sm font-bold px-4 py-2 rounded-full shadow-sm text-gray-800">
