@@ -20,6 +20,8 @@ export async function createOrder(data: {
     size: string;
     quantity: number;
     price: number;
+    isCustom?: boolean;
+    customDetails?: string;
   }[];
 }) {
   const orderNumber = `KILBY-${Math.floor(100000 + Math.random() * 900000)}`;
@@ -44,7 +46,9 @@ export async function createOrder(data: {
           name: item.name,
           size: item.size,
           quantity: item.quantity,
-          price: item.price
+          price: item.price,
+          isCustom: item.isCustom || false,
+          customDetails: item.customDetails || null
         }))
       }
     }

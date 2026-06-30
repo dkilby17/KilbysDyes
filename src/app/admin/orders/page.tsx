@@ -68,8 +68,12 @@ export default async function AdminOrdersPage() {
                     <div className="space-y-3">
                       {order.items.map(item => (
                         <div key={item.id} className="flex justify-between items-center text-sm">
-                          <div>
-                            <span className="font-medium">{item.quantity}x</span> {item.name} <span className="text-gray-500">(Size: {item.size})</span>
+                          <div className="flex flex-col">
+                            <div>
+                              <span className="font-medium">{item.quantity}x</span> {item.name} <span className="text-gray-500">(Size: {item.size})</span>
+                              {item.isCustom && <span className="text-[10px] bg-fuchsia-100 text-fuchsia-700 px-2 py-0.5 rounded ml-2 align-middle">Custom Design</span>}
+                            </div>
+                            {item.customDetails && <div className="text-xs text-gray-500 mt-1 leading-relaxed max-w-sm">{item.customDetails}</div>}
                           </div>
                           <div className="font-medium">${(item.price * item.quantity).toFixed(2)}</div>
                         </div>

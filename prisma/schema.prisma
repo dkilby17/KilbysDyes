@@ -64,8 +64,10 @@ model OrderItem {
   productId String
   name      String
   size      String
-  quantity  Int
-  price     Float
+  quantity      Int
+  price         Float
+  isCustom      Boolean @default(false)
+  customDetails String?
   orderId   String
   order     Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
 }

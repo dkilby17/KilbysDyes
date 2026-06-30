@@ -29,7 +29,7 @@ export default function CartPage() {
           {cartItems.length > 0 ? (
             <div className="space-y-6">
               {cartItems.map(item => (
-                <div key={`${item.productId}-${item.size}`} className="flex gap-6 pb-6 border-b border-gray-200">
+                <div key={`${item.productId}-${item.size}-${item.customDetails || ''}`} className="flex gap-6 pb-6 border-b border-gray-200">
                   <Link href={`/product/${item.productId}`} className="w-24 h-24 md:w-32 md:h-32 bg-gray-100 rounded-2xl overflow-hidden shrink-0 relative group">
                     {item.imageUrl ? (
                       <Image src={item.imageUrl} alt={item.name} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -41,10 +41,13 @@ export default function CartPage() {
                   <div className="flex-1 flex flex-col justify-between py-1">
                     <div className="flex justify-between items-start gap-4">
                       <div>
-                        <Link href={`/product/${item.productId}`} className="font-bold text-lg md:text-xl hover:text-sky-500 transition-colors">
-                          {item.name}
+                        <Link href={item.isCustom ? '/custom' : `/product/${item.productId}`} className="font-bold text-lg md:text-xl hover:text-sky-500 transition-colors">
+                          {item.name} {item.isCustom && <span className="text-xs bg-fuchsia-100 text-fuchsia-700 px-2 py-1 rounded-full ml-2 align-middle">Custom Design</span>}
                         </Link>
-                        <p className="text-gray-500 mt-1">Size: <span className="font-bold text-gray-900">{item.size}</span></p>
+                        <p className="text-gray-500 mt-1 text-sm">Size: <span className="font-bold text-gray-900">{item.size}</span></p>
+                        {item.customDetails && (
+                          <p className="text-gray-500 text-sm mt-1">{item.customDetails}</p>
+                        )}
                       </div>
                       <p className="font-bold text-lg">${item.price.toFixed(2)}</p>
                     </div>
@@ -53,20 +56,20 @@ export default function CartPage() {
                       <div className="flex items-center border border-gray-200 rounded-full bg-white px-2">
                         <button 
                           onClick={() => {
-                            if (item.quantity === 1) removeItem(item.productId, item.size);
-                            else updateQuantity(item.productId, item.size, item.quantity - 1);
+                            if (item.quantity === 1) removeItem(item.productId, item.size, item.customDetails);
+                            else updateQuantity(item.productId, item.size, item.customDetails, item.quantity - 1);
                           }}
                           className="w-8 h-8 flex items-center justify-center font-bold text-xl hover:text-sky-500"
                         >&minus;</button>
                         <span className="w-8 text-center font-bold text-sm">{item.quantity}</span>
                         <button 
-                          onClick={() => updateQuantity(item.productId, item.size, item.quantity + 1)}
+                          onClick={() => updateQuantity(item.productId, item.size, item.customDetails, item.quantity + 1)}
                           className="w-8 h-8 flex items-center justify-center font-bold text-xl hover:text-sky-500"
                         >+</button>
                       </div>
                       
                       <button 
-                        onClick={() => removeItem(item.productId, item.size)}
+                        onClick={() => removeItem(item.productId, item.size, item.customDetails)}
                         className="text-sm font-bold text-gray-400 hover:text-red-500 underline decoration-2 underline-offset-4 transition-colors"
                       >
                         Remove

@@ -60,7 +60,9 @@ export default function CheckoutPage() {
         name: item.name,
         size: item.size,
         quantity: item.quantity,
-        price: item.price
+        price: item.price,
+        isCustom: item.isCustom,
+        customDetails: item.customDetails
       }))
     };
 
@@ -195,14 +197,15 @@ export default function CheckoutPage() {
             
             <div className="space-y-4 mb-6 max-h-[40vh] overflow-y-auto pr-2">
               {cartItems.map(item => (
-                <div key={`${item.productId}-${item.size}`} className="flex gap-4">
+                <div key={`${item.productId}-${item.size}-${item.customDetails || ''}`} className="flex gap-4">
                   <div className="w-16 h-16 bg-gray-200 rounded-xl overflow-hidden shrink-0 relative">
                     {item.imageUrl && <Image src={item.imageUrl} alt={item.name} fill className="object-cover" />}
                     <span className="absolute -top-2 -right-2 bg-gray-800 text-white w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold z-10">{item.quantity}</span>
                   </div>
                   <div className="text-sm flex-1">
-                    <p className="font-bold line-clamp-1">{item.name}</p>
+                    <p className="font-bold line-clamp-1">{item.name} {item.isCustom && <span className="text-[10px] bg-fuchsia-100 text-fuchsia-700 px-1 py-0.5 rounded ml-1">Custom</span>}</p>
                     <p className="text-gray-500">Size: {item.size}</p>
+                    {item.customDetails && <p className="text-gray-500 text-xs mt-1 leading-snug">{item.customDetails}</p>}
                     <p className="font-bold mt-1">${(item.price * item.quantity).toFixed(2)}</p>
                   </div>
                 </div>

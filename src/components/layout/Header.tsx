@@ -23,6 +23,7 @@ export function Header() {
           </Link>
           <nav className="hidden md:flex items-center gap-6 text-sm font-bold">
             <Link href="/shop" className="hover:text-sky-500 transition-colors">Shop</Link>
+            <Link href="/custom" className="hover:text-blue-500 transition-colors">Design Your Own</Link>
             <Link href="/new-drops" className="hover:text-fuchsia-500 transition-colors">New Drops</Link>
           </nav>
         </div>
@@ -57,6 +58,13 @@ export function Header() {
               className="py-2 hover:text-sky-500 transition-colors border-b border-gray-100"
             >
               Shop
+            </Link>
+            <Link 
+              href="/custom" 
+              onClick={() => setIsMenuOpen(false)}
+              className="py-2 hover:text-blue-500 transition-colors border-b border-gray-100"
+            >
+              Design Your Own
             </Link>
             <Link 
               href="/new-drops" 

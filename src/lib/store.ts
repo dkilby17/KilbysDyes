@@ -8,13 +8,15 @@ export interface CartItem {
   size: string;
   quantity: number;
   imageUrl: string;
+  isCustom?: boolean;
+  customDetails?: string;
 }
 
 interface CartState {
   items: CartItem[];
   addItem: (item: CartItem) => void;
-  removeItem: (productId: string, size: string) => void;
-  updateQuantity: (productId: string, size: string, quantity: number) => void;
+  removeItem: (productId: string, size: string, customDetails?: string) => void;
+  updateQuantity: (productId: string, size: string, customDetails: string | undefined, quantity: number) => void;
   clearCart: () => void;
   getTotalItems: () => number;
   getSubtotal: () => number;
@@ -25,11 +27,15 @@ export const useCartStore = create<CartState>()(
     (set, get) => ({
       items: [],
       addItem: (item) => set((state) => {
-        const existingItem = state.items.find(i => i.productId === item.productId && i.size === item.size);
+        const existingItem = state.items.find(i => 
+          i.productId === item.productId && 
+          i.size === item.size && 
+          i.customDetails === item.customDetails
+        );
         if (existingItem) {
           return {
             items: state.items.map(i => 
-              (i.productId === item.productId && i.size === item.size) 
+              (i.productId === item.productId && i.size === item.size && i.customDetails === item.customDetails) 
                 ? { ...i, quantity: i.quantity + item.quantity } 
                 : i
             )
@@ -37,12 +43,12 @@ export const useCartStore = create<CartState>()(
         }
         return { items: [...state.items, item] };
       }),
-      removeItem: (productId, size) => set((state) => ({
-        items: state.items.filter(i => !(i.productId === productId && i.size === size))
+      removeItem: (productId, size, customDetails) => set((state) => ({
+        items: state.items.filter(i => !(i.productId === productId && i.size === size && i.customDetails === customDetails))
       })),
-      updateQuantity: (productId, size, quantity) => set((state) => ({
+      updateQuantity: (productId, size, customDetails, quantity) => set((state) => ({
         items: state.items.map(i => 
-          (i.productId === productId && i.size === size) 
+          (i.productId === productId && i.size === size && i.customDetails === customDetails) 
             ? { ...i, quantity } 
             : i
         )
